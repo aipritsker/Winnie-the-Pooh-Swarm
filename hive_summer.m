@@ -30,6 +30,13 @@ function [yres, yV, yP, yH, yR] = hive_summer(year,a,s,y,resIn,Vin,Pin,Hin,Rin,X
              % disp([t,X(3)]);
 
 		     R(1,t-yeardays*T)= X(4);
+             
+             %REMOVAL OF HONEY SUPER
+             %typically, one box with be removed (10 frames), emptied of
+             %honey, and put back with empty frames. We think that on a 
+             if X(1) == 0
+                 H(1,t-yeardays*T) = X(3)- 100;
+             end
  
           end %END OF LOOP THROUGH THIS SUMMER
     
