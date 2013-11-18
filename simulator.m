@@ -155,7 +155,7 @@ YMatrix1=pop';
 A=Ppop; %pollen storage throughout all seaseons
 % disp('pollen in kg, no equip')
 % disp(A'*.00023)
-disp(A')
+% disp(A')
 B=Hpop;  %honey storage throught all seasons
 YMatrix2= [A;B]';
  Y3=Rpop;

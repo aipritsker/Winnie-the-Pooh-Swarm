@@ -23,9 +23,6 @@ function [yres, yV, yP, yH, yR] = hive_summer(year,a,s,y,resIn,Vin,Pin,Hin,Rin,X
 		     res(1:6,t-yeardays*T)= G*X(5:end); %G*X(5:end); 
  
 		     V(1,t-yeardays*T)= X(1);
-             if X(1) <2000
-                 disp('less than 2k cells left')
-             end
 
 		     P(1,t-yeardays*T) = X(2);
         
@@ -37,11 +34,9 @@ function [yres, yV, yP, yH, yR] = hive_summer(year,a,s,y,resIn,Vin,Pin,Hin,Rin,X
              %REMOVAL OF HONEY SUPER
              %typically, one box with be removed (10 frames), emptied of
              %honey, and put back with empty frames. We think that on a 
-             %1 box = 10 frames = 10x4620 cells/frame = 46,200 cells
-             %removed
+             %1 box = 10 frames = 10x4
              if X(1) == 0
-                 H(1,t-yeardays*T) = X(3)- 46200;
-                 disp('Removed on super of honey')
+                 H(1,t-yeardays*T) = X(3)- 100;
              end
  
           end %END OF LOOP THROUGH THIS SUMMER
